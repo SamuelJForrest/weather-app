@@ -5,6 +5,7 @@ const cityTemp = document.querySelector('.temp');
 const cityDescription = document.querySelector('.description');
 const cityIcon = document.querySelector('.icon');
 const locationForm = document.querySelector('.location');
+const highLow = document.querySelector('.high-low');
 
 
 submitBtn.addEventListener('click', function(){
@@ -17,13 +18,16 @@ submitBtn.addEventListener('click', function(){
         let tempValue = response['main']['temp'];
         let descValue = response['weather'][0]['description'];
         let iconValue = response['weather'][0]['icon'];
-        let iconUrl = `http://openweathermap.org/img/w/${iconValue}.png`;
+        let maxTemp = Math.floor(response['main']['temp_max']);
+        let minTemp = Math.floor(response['main']['temp_min']);
+        // let iconUrl = `http://openweathermap.org/img/w/${iconValue}.png`;
 
 
         cityName.innerHTML = nameValue;
-        cityTemp.innerHTML = `${tempValue}C`;
+        cityTemp.innerHTML = `${tempValue}°C`;
         cityDescription.innerHTML = descValue;
-        cityIcon.src = iconUrl;
+        highLow.innerHTML = `${minTemp}°C/${maxTemp}°C`;
+        // cityIcon.src = iconUrl;
 
 
         console.log(response);
@@ -31,15 +35,7 @@ submitBtn.addEventListener('click', function(){
 
 
     .catch(error => {
-        // let errorMessage = document.createElement('p');
-        // errorMessage.textContent = 'Please Select Valid City';
-        // errorMessage.classList.toggle('warning');
-        // locationForm.append(errorMessage);
-        // locationForm.childNodes[4].remove();
-
-        // inputValue.addEventListener('click', () => {
-        //     locationForm.childNodes[3].remove();
-        // })
+        console.log(error);
     })    
 });
 
