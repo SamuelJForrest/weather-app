@@ -10,13 +10,15 @@ const weatherIcon = document.querySelector('.weather-icon');
 const weatherForm = document.querySelector('#weather-form');
 
 
-weatherForm.addEventListener('submit', function(){
+weatherForm.addEventListener('submit', function(e){
+    e.preventDefault();
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue.value}&units=metric&appid=e3ffced8a3de62b8d738d5fe0ad79f9c`)
     .then(response => {
         return response.json()
     })
     .then(response => {
         let nameValue = response['name'];
+        let country = response['sys']['country'];
         let tempValue = Math.floor(response['main']['temp']);
         let descValue = response['weather'][0]['description'];
         let iconValue = response['weather'][0]['id'];
@@ -24,7 +26,7 @@ weatherForm.addEventListener('submit', function(){
         let minTemp = Math.floor(response['main']['temp_min']);
 
 
-        cityName.innerHTML = nameValue;
+        cityName.innerHTML = `${nameValue}, ${country}`;
         cityTemp.innerHTML = `${tempValue}°C`;
         cityDescription.innerHTML = descValue;
         highLow.innerHTML = `${minTemp}°C/${maxTemp}°C`;
