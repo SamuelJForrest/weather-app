@@ -40,14 +40,17 @@ body {
 }
 
 .location {
-    margin: 5% 0 0 2.5%;
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
 }
 
 .location form {
     display: flex;
     justify-content: center;
     height: 10vh;
-    width: 100%;
+    width: 90%;
     opacity: 0.8;
 }
 
@@ -133,3 +136,80 @@ body {
     font-size: 1.75rem;
     font-style: italic;
 } 
+
+@media screen and (max-width: 1024px){
+    .main-weather {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .filter {
+        border-radius: 0;
+    }
+    .location {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .location form {
+        width: 75%;
+        margin-bottom: 5%;
+    }
+    .location button {
+        width: 25%;
+        font-size: 1.25rem;
+    }
+    .information h1{
+        font-size: 5rem;
+    }
+    .information .weather-icon {
+        width: 15%;
+    }
+    .information .temp {
+        font-size: 8rem;
+        margin-bottom: 5%;
+    }
+    .information .description {
+        font-size: 2rem;
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .main-weather {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .filter {
+        border-radius: 0;
+    }
+    .location {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .location form {
+        width: 90%;
+        margin-bottom: 10%;
+    }
+    .location button {
+        width: 25%;
+        font-size: .75rem;
+    }
+    .information h1{
+        font-size: 3rem;
+    }
+    .information .weather-icon {
+        width: 30%;
+    }
+    .information .temp {
+        font-size: 5rem;
+        margin-bottom: 10%;
+    }
+    .information .description {
+        font-size: 1.25rem;
+        margin-bottom: 10%;
+    }
+}

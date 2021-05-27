@@ -32,19 +32,26 @@ weatherForm.addEventListener('submit', function(e){
         highLow.innerHTML = `${minTemp}°C/${maxTemp}°C`;
         if (iconValue >= 200 && iconValue <= 232) {
             weatherIcon.src = './img/weather-icons/png/wsymbol_0024_thunderstorms.png';
+            weatherIcon.alt = 'Thunderstorm icon';
         } else if (iconValue >= 300 && iconValue <= 321){
             weatherIcon.src = './img/weather-icons/png/wsymbol_0017_cloudy_with_light_rain.png';
+            weatherIcon.alt = 'Light rain icon';
         } else if (iconValue >=500 && iconValue <= 531) {
-            weatherIcon.src = './img/weather-icons/png/wsymbol_0010_heavy_rain_showers.png';
+            weatherIcon.src = './img/weather-icons/png/wsymbol_0018_cloudy_with_heavy_rain.png';
+            weatherIcon.alt = 'Heavy rain icon';
         } else if (iconValue >= 600 && iconValue <= 622){
             weatherIcon.src = './img/weather-icons/png/wsymbol_0012_heavy_snow_showers.png';
+            weatherIcon.alt = 'Snow icon';
         } else if (iconValue >= 701 && iconValue <= 781) {
             weatherIcon.src = './img/weather-icons/png/wsymbol_0007_fog.png';
+            weatherIcon.alt = 'Fog icon';
         } else if (iconValue === 800) {
             weatherIcon.src = './img/weather-icons/png/wsymbol_0001_sunny.png';
+            weatherIcon.alt = 'Sun icon';
         }
         else if (iconValue >= 801 && iconValue <= 804) {
             weatherIcon.src = './img/weather-icons/png/wsymbol_0003_white_cloud.png';
+            weatherIcon.alt = 'Cloud icon';
         }
 
         if (locationForm.childNodes.length > 3){
